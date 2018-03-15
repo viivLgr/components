@@ -1,0 +1,14 @@
+{
+  "name": "animation",
+  "version": "1.0.0",
+  "description": "帧动画库",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "webpack": "^1.12.11"
+  },
+  "author": "viiv_lgr@163.com",
+  "license": "ISC"
+}
