@@ -9,6 +9,10 @@
 - [预览地址](https://viivlgr.github.io/components/Animation/demo/index.html)
 
 
+## 图片预加载
+- 原生js [code](https://github.com/viivLgr/components/blob/master/Animation/src/imageLoader.js)
+- 基于jQuery [code](https://github.com/viivLgr/components/blob/master/PreLoading/Camaro/preload.js)
+
 
 # tips
 使用github pages预览页面
