@@ -22,6 +22,10 @@
 2. 使用css
 - css3： 使用hover属性和target属性 [预览](https://viivlgr.github.io/components/Start/index4.html)
 - 不使用css3: 使用可视区的特性`over:hidden;`，可以让锚点元素显示在可视区内，兼容到ie6及以上 [预览](https://viivlgr.github.io/components/Start/index5.html)
+3. 最完善功能 **推荐！！！**
+- 使用策略模式，将两个星星完成全星、半星评定方式。
+[code](https://github.com/viivLgr/components/blob/master/Start/index8.html)
+[预览](https://viivlgr.github.io/components/Start/index8.html)
 
 
 

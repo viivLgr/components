@@ -4,10 +4,13 @@
 - 半星
 [预览](https://viivlgr.github.io/components/Start/index3.html)
 组件基于jQuery，并学习了设计模式中的母类继承 [code](https://github.com/viivLgr/components/tree/master/Start)
-2. css
+2. css: 使用的背景图片比较复杂，不利于平分提交
 - css3： 使用hover属性和target属性 [预览](https://viivlgr.github.io/components/Start/index4.html)
 - 不使用css3: 使用可视区的特性`over:hidden;`，可以让锚点元素显示在可视区内，兼容到ie6及以上 [预览](https://viivlgr.github.io/components/Start/index5.html)
-
+- 使用form表单: 
+    使用简单背景图片，`repeat-x`,控制宽度来显示星级
+    利用`input:checked + label`选择 [预览](https://viivlgr.github.io/components/Start/index6.html)
+1qw2
 ### 主要思路
 - 全星： 通过改变`background-position`
 - 半星：
