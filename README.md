@@ -14,11 +14,15 @@
 - 基于jQuery [code](https://github.com/viivLgr/components/blob/master/PreLoading/Camaro/preload.js)
 
 ## 星级评定
+1. 使用js
 - 全星 
 - 半星
-
 [预览](https://viivlgr.github.io/components/Start/index3.html)
 组件基于jQuery，并学习了设计模式中的母类继承 [code](https://github.com/viivLgr/components/tree/master/Start)
+2. 使用css
+- css3： 使用hover属性和target属性 [预览](https://viivlgr.github.io/components/Start/index4.html)
+- 不使用css3: 使用可视区的特性`over:hidden;`，可以让锚点元素显示在可视区内，兼容到ie6及以上 [预览](https://viivlgr.github.io/components/Start/index5.html)
+
 
 
 # tips
