@@ -10,7 +10,12 @@
 - 使用form表单: 
     使用简单背景图片，`repeat-x`,控制宽度来显示星级
     利用`input:checked + label`选择 [预览](https://viivlgr.github.io/components/Start/index6.html)
-1qw2
+3. 最完善功能 **推荐！！！**
+- 使用策略模式，将两个星星完成全星、半星评定方式。
+[code](https://github.com/viivLgr/components/blob/master/Start/index8.html)
+[预览](https://viivlgr.github.io/components/Start/index8.html)
+
+
 ### 主要思路
 - 全星： 通过改变`background-position`
 - 半星：
