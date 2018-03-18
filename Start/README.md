@@ -2,13 +2,13 @@
 jquery插件
 
 ### 主要思路
-- 点亮星星
+- 全星： 通过改变`background-position`
+- 半星：
 ```
-/**
-*
-*/
-var ligthOn = function($item, num){
-
+if(e.pageX- $el.offset().left < $el.width() / 2){
+    // 点亮半星
+} else{
+    // 点亮全星
 }
 ```
 
