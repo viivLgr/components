@@ -122,4 +122,4 @@ LightEntire.prototype.select = function(){
 };
 ```
 
-[具体实现代码]()
+[具体实现代码](https://github.com/viivLgr/components/blob/master/Start/index3.html)

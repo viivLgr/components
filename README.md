@@ -13,6 +13,12 @@
 - 原生js [code](https://github.com/viivLgr/components/blob/master/Animation/src/imageLoader.js)
 - 基于jQuery [code](https://github.com/viivLgr/components/blob/master/PreLoading/Camaro/preload.js)
 
+## 星级评定
+- 全星 
+- 半星
+[预览](https://viivlgr.github.io/components/Start/index3.html)
+组件基于jQuery，并学习了设计模式中的母类继承 [code](https://github.com/viivLgr/components/tree/master/Start)
+
 
 # tips
 使用github pages预览页面
