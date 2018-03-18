@@ -100,6 +100,9 @@
             Light.prototype.select = function(){
                 throw new Error('子类必须重写此方法');
             };
+            Light.prototype.unbindEvent = function(){
+                this.$el.off(); // 解绑的所有事件
+            };
 
             // 点亮半颗
             var LightHalf = function(el, options){
@@ -149,39 +152,73 @@
             };
 
             // 初始化
-            var init = function(el, options){
-                options = $.extend({}, defaults, options); // 将options里的内容与defaults里的内容合并并创建新的对象保存然后赋给options
+            var init = function(el, option){
+                var $el = $(el),
+                    rating = $el.data('rating'),
+                    options = $.extend({}, defaults, typeof option === 'object' && option); // 将options里的内容与defaults里的内容合并并创建新的对象保存然后赋给options
                 if(!mode[options.mode]){
                     options.mode = 'LightEntire'
                 }
-                new mode[options.mode](el,options).init()
+                if(!rating){
+                    $el.data('rating', (rating = new mode[options.mode](el,options)))
+                    rating.init();
+                }
+                console.log(rating);
+                if(typeof option === 'string') rating[option]();
             };
+
+            // jquery插件
+            $.fn.extend({
+                rating: function(option){
+                    return this.each(function(){
+                        init(this, option);
+                    });
+                }
+            })
             return {
                 init: init
             }
         })();
 
-        rating.init('#rating', {
-            mode: 'sa',
-            num: 2,
-            select: function(num, total){
-                // console.log(this);
-                console.log(num + '/' + total);
-            },
-            chosen: function(num, total){
-                console.log('click:' + num + '/' + total);
-            }
+        // jQuery插件调用
+        $('#rating').rating({
+            mode: 'LightEntire',
+            num: 2
         });
-        rating.init('#rating2', {
-            mode: 'LightHalf',
-            num: 2.5
-        });
-        // 测试绑定事件 第一个参数是e事件对象
-        $('#rating2').on('select', function(e, num, total){
-            console.log(num + '/' + total);
+        $('#rating').on('select', function(e, num, total){
+            console.log('rating:' + num + '/' + total);
         }).on('chosen', function(e, num, total){
-            console.log(num + '/' + total);
+            console.log('chosen:' + num + '/' + total);
+            $('#rating').rating('unbindEvent');
         });
+        $('#rating2').rating({
+            mode: 'LightHalf',
+            num: 3.5
+        });
+
+        // return 方式调用
+        // rating.init('#rating', {
+        //     mode: 'sa',
+        //     num: 2,
+        //     select: function(num, total){
+        //         // console.log(this);
+        //         console.log(num + '/' + total);
+        //     },
+        //     chosen: function(num, total){
+        //         console.log('click:' + num + '/' + total);
+        //         rating.init('#rating', 'unbindEvent'); // 选择后解绑定
+        //     }
+        // });
+        // rating.init('#rating2', {
+        //     mode: 'LightHalf',
+        //     num: 2.5
+        // });
+        // // 测试绑定事件 第一个参数是e事件对象
+        // $('#rating2').on('select', function(e, num, total){
+        //     console.log(num + '/' + total);
+        // }).on('chosen', function(e, num, total){
+        //     console.log(num + '/' + total);
+        // });
     </script>
 </body>
 </html>
