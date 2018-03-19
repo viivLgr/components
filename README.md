@@ -32,6 +32,8 @@
         [code](https://github.com/viivLgr/components/blob/master/Start/index9.html)
         [预览](https://viivlgr.github.io/components/Start/index9.html)
 
+## [模拟form表单提交](https://github.com/viivLgr/components/tree/master/FromAjax)
+
 ## 侧边工具条开发
 使用Sass、RequireJS
 ## 实现方式
