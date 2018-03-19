@@ -24,7 +24,7 @@ $.extend({
 });
 
 // 使用方式
-var form = StandardForm('http://106.14.6.153:8888/','POST',{
+var form = $.StandardForm('http://106.14.6.153:8888/','POST',{
     product_code: code,
     type: '1'
 });

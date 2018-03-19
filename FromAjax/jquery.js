@@ -17,6 +17,11 @@ $.extend({
     }
 });
 
+// 使用方式
+var form = $.StandardForm('http://106.14.6.153:8888/','POST',{
+    product_code: code,
+    type: '1'
+});
 var options = {
     target: '#output1',
     // 从服务传过来的数据显示在这个div内部
