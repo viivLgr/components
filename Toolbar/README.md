@@ -16,6 +16,10 @@
     [预览](https://viivlgr.github.io/components/Toolbar/tool2.html)
 
 - 利用befor和after伪类的方式
+    1. 避免了图片的使用，节约了性能，并且修改方便
+    2. HTML结构简单，但CSS稍显复杂
+    3. 不兼容IE6和IE7
+    [预览](https://viivlgr.github.io/components/Toolbar/tool3.html)
 
 ## Sass的基础知识
 - 安装[koala](http://koala-app.com/index-zh.html)支持编译sass文件
@@ -50,6 +54,11 @@ $toolbar-size: 52px;
 - _mixin.scss 文件导入: 不需要`_`和后缀名
 ```
 @import "mixin";
+```
+
+- 继承
+```
+@extend .icon-wechat;
 ```
 
 
