@@ -32,7 +32,18 @@
         [code](https://github.com/viivLgr/components/blob/master/Start/index9.html)
         [预览](https://viivlgr.github.io/components/Start/index9.html)
 
+## 侧边工具条开发
+使用Sass、RequireJS
+## 实现方式
+- 使用背景图片：精灵图，通过改变`background-position`
+    1. HTML结构简单
+    2. 兼容性良好，可以兼容到IE6
+    3. 使用了大量的图片，对性能有一定的影响，并且不利于修改
+    [预览](https://viivlgr.github.io/components/Toolbar/tool1.html)
 
+- 使用图标字体
+
+- 利用befor和after伪类的方式
 
 # tips
 使用github pages预览页面

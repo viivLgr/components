@@ -6,6 +6,7 @@
     1. HTML结构简单
     2. 兼容性良好，可以兼容到IE6
     3. 使用了大量的图片，对性能有一定的影响，并且不利于修改
+    [预览](https://viivlgr.github.io/components/Toolbar/tool1.html)
 
 - 使用图标字体
 
