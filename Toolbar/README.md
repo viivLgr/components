@@ -9,6 +9,7 @@
     [预览](https://viivlgr.github.io/components/Toolbar/tool1.html)
 
 - 使用图标字体
+    [下载字体](https://icomoon.io/app/#/select)
 
 - 利用befor和after伪类的方式
 
@@ -56,15 +57,15 @@ $toolbar-size: 52px;
 
 ### RequireJS常用的方法
 1. requirejs.config
+2. requirejs
 ```
+// main.js
 requirejs.config({
     paths: { // 定义别名
         jquery: 'jquery.min'
     }
 });
-```
-2. requirejs
-```
+
 // 模块引入, 并调用
 requirejs(['jquery', 'validate'], function ($, validate) {
     $('body').css('background-color', 'red');
@@ -73,6 +74,7 @@ requirejs(['jquery', 'validate'], function ($, validate) {
 ```
 3. define
 ```
+// validate.js
 define([
     'jquery' // 添加依赖
 ], function($) {
