@@ -90,6 +90,9 @@ define([
 ```
 <script src="js/require.js" data-main="js/main"></script>
 ```
+- 在html文件里引入下载好的require.js，然后设置他的data-main为入口文件main.js
+- main.js里面先是设置了引入资源的别名等
+- 我们自己定义了一个validate.js的方法，并且把isEqual方法return了出去，所以在main里就可以引入，并且调用
 
 
 
