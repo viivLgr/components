@@ -12,8 +12,12 @@
     利用`input:checked + label`选择 [预览](https://viivlgr.github.io/components/Start/index6.html)
 3. 最完善功能 **推荐！！！**
 - 使用策略模式，将两个星星完成全星、半星评定方式。
-[code](https://github.com/viivLgr/components/blob/master/Start/index8.html)
-[预览](https://viivlgr.github.io/components/Start/index8.html)
+    a. 实现1： 借助多个标签，采用事件委托方式监听`mouseover`,判断鼠标所选位置
+        [code](https://github.com/viivLgr/components/blob/master/Start/index8.html)
+        [预览](https://viivlgr.github.io/components/Start/index8.html)
+    b. 实现2：仅需两个标签，通过`e.pageX - $el.offset().left`的距离计算所选位置 **推荐！！**
+        [code](https://github.com/viivLgr/components/blob/master/Start/index9.html)
+        [预览](https://viivlgr.github.io/components/Start/index9.html)
 
 
 ### 主要思路
