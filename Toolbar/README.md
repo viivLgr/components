@@ -10,6 +10,10 @@
 
 - 使用图标字体
     [下载字体](https://icomoon.io/app/#/select)
+    1. 避免了图片的使用，节约了性能，并且修改方便
+    2. HTML结构稍显复杂
+    3. 不兼容IE6和IE7
+    [预览](https://viivlgr.github.io/components/Toolbar/tool2.html)
 
 - 利用befor和after伪类的方式
 
@@ -61,9 +65,19 @@ $toolbar-size: 52px;
 ```
 // main.js
 requirejs.config({
+    // 直接改变基目录
+    baseUrl: "js/lib",
+    // 指定各个模块的加载路径。
     paths: { // 定义别名
         jquery: 'jquery.min'
-    }
+    },
+    // 专门用来配置不兼容的模块。没有采用AMD规范编写
+    shim: {
+　　　　　'jquery.scroll': {
+　　　　　　    deps: ['jquery'],
+　　　　　　    exports: 'jQuery.fn.scroll'
+　　　　  }
+　　　}
 });
 
 // 模块引入, 并调用

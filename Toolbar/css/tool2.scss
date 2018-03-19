@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?4xxi4t');
+    src:  url('fonts/icomoon.eot?4xxi4t#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?4xxi4t') format('truetype'),
+      url('fonts/icomoon.woff?4xxi4t') format('woff'),
+      url('fonts/icomoon.svg?4xxi4t#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+.icon-wechat:before {
+    content: "\e900";
+}
+.icon-mobile:before {
+    content: "\e958";
+}
+.icon-bubble2:before {
+    content: "\e96e";
+}
+.icon-arrow-up2:before {
+    content: "\ea3a";
+}
+  
+@import "mixin";
+$toolbar-size: 52px;
+.toolbar-item, .toolbar-btn, .toolbar-icon, .toolbar-text{
+    width: $toolbar-size;
+    height: $toolbar-size;
+}
+.toolbar-btn, .toolbar-icon, .toolbar-text{
+    position: absolute;
+    left: 0;
+}
+.toolbar-icon, .toolbar-text{
+    color: #fff;
+    text-align: center;
+    @include transition(top 1s);
+}
+.toolbar{
+    position: fixed;
+    left: 50%;
+    bottom: 50px;
+    margin-left: -$toolbar-size / 2;
+}
+.toolbar-item{
+    position: relative;
+    display: block;
+    margin-top: 1px;
+    &:hover{
+        .toolbar-icon{
+            top: -$toolbar-size;
+        }
+        .toolbar-text{
+            top: 0;
+        }
+        .toolbar-layer-weixin, .toolbar-layer-app{
+            @include opacity(1);
+            @include scale(1);
+        }
+    }
+}
+.toolbar-btn{
+    top: 0;
+    overflow: hidden;
+}
+.toolbar-icon{
+    top: 0;
+    background-color: #d0d6d9;
+    font-size: 30px;
+    line-height: $toolbar-size;
+}
+.toolbar-text{
+    top: $toolbar-size;
+    background-color: #98a1a6;
+    padding-top: 12px;
+    font-size: 12px;
+    line-height: 1.2;
+}
+.toolbar-layer{
+    position: absolute;
+    right: $toolbar-size - 6;
+    bottom: 10px;
+    width: 172px;
+    background-image: url('../img/toolbar_img.png');
+    background-repeat: no-repeat;
+    @include opacity(0);
+    @include transform-origin(95% 95%);
+    @include scale(0.01);
+    @include transition(all 1s);
+}
+.toolbar-layer-weixin{
+    height: 212px;
+    background-position: 0 0;
+}
+.toolbar-layer-app{
+    height: 194px;
+    background-position: 0 -222px;
+}
