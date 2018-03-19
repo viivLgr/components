@@ -13,9 +13,9 @@
 - 原生js [code](https://github.com/viivLgr/components/blob/master/Animation/src/imageLoader.js)
 - 基于jQuery [code](https://github.com/viivLgr/components/blob/master/PreLoading/Camaro/preload.js)
 
-## [星级评定](https://github.com/viivLgr/components/tree/master/Start)
+## [星级评定](https://github.com/viivLgr/components/tree/master/Star)
 多种方式开发
-[最优方式预览](https://viivlgr.github.io/components/Start/index9.html)
+[最优方式预览](https://viivlgr.github.io/components/Star/index9.html)
 
 
 ## [模拟form表单提交](https://github.com/viivLgr/components/tree/master/FormAjax)

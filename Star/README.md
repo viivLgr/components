@@ -2,22 +2,22 @@
 1. js
 - 全星 
 - 半星
-[预览](https://viivlgr.github.io/components/Start/index3.html)
-组件基于jQuery，并学习了设计模式中的母类继承 [code](https://github.com/viivLgr/components/tree/master/Start)
+[预览](https://viivlgr.github.io/components/Star/index3.html)
+组件基于jQuery，并学习了设计模式中的母类继承 [code](https://github.com/viivLgr/components/tree/master/Star)
 2. css: 使用的背景图片比较复杂，不利于平分提交
-- css3： 使用hover属性和target属性 [预览](https://viivlgr.github.io/components/Start/index4.html)
-- 不使用css3: 使用可视区的特性`over:hidden;`，可以让锚点元素显示在可视区内，兼容到ie6及以上 [预览](https://viivlgr.github.io/components/Start/index5.html)
+- css3： 使用hover属性和target属性 [预览](https://viivlgr.github.io/components/Star/index4.html)
+- 不使用css3: 使用可视区的特性`over:hidden;`，可以让锚点元素显示在可视区内，兼容到ie6及以上 [预览](https://viivlgr.github.io/components/Star/index5.html)
 - 使用form表单: 
     使用简单背景图片，`repeat-x`,控制宽度来显示星级
-    利用`input:checked + label`选择 [预览](https://viivlgr.github.io/components/Start/index6.html)
+    利用`input:checked + label`选择 [预览](https://viivlgr.github.io/components/Star/index6.html)
 3. 最完善功能 **推荐！！！**
 - 使用策略模式，将两个星星完成全星、半星评定方式。
      - 实现1： 借助多个标签，采用事件委托方式监听`mouseover`,判断鼠标所选位置
-        [code](https://github.com/viivLgr/components/blob/master/Start/index8.html)
-        [预览](https://viivlgr.github.io/components/Start/index8.html)
+        [code](https://github.com/viivLgr/components/blob/master/Star/index8.html)
+        [预览](https://viivlgr.github.io/components/Star/index8.html)
     - 实现2：仅需两个标签，通过`e.pageX - $el.offset().left`的距离计算所选位置 **推荐！！**
-        [code](https://github.com/viivLgr/components/blob/master/Start/index9.html)
-        [预览](https://viivlgr.github.io/components/Start/index9.html)
+        [code](https://github.com/viivLgr/components/blob/master/Star/index9.html)
+        [预览](https://viivlgr.github.io/components/Star/index9.html)
 
 
 ### 主要思路
