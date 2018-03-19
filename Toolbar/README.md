@@ -1,7 +1,7 @@
 # 侧边工具条开发
 使用Sass、RequireJS
 
-## 实现方式
+## 样式实现方式 使用Sass
 - 使用背景图片：精灵图，通过改变`background-position`
     1. HTML结构简单
     2. 兼容性良好，可以兼容到IE6
@@ -21,11 +21,130 @@
     3. 不兼容IE6和IE7
     [预览](https://viivlgr.github.io/components/Toolbar/tool3.html)
 
+## 逻辑实现 使用requirejs，jQuery
+1. 依赖jQuery，定义可以灵活设置滚动距离的scrollto模块
+```
+// scrollto.js
+define(['jquery'], function($) {
+    'use strict';
+    function ScrollTo(opts){
+        this.opts = $.extend({}, ScrollTo.DEFAULTS, opts);
+        this.$el = $('html, body');
+    }
+    ScrollTo.DEFAULTS = {
+        dest: 0,
+        speed: 800
+    };
+    ScrollTo.prototype.move = function(){
+        console.log('move')
+        var opts = this.opts,
+            dest = opts.dest;
+        if($(window).scrollTop() != dest){
+            if(!this.$el.is(':animated')){
+                this.$el.animate({
+                    scrollTop: dest 
+                }, opts.speed);
+            }
+        }
+    };
+    ScrollTo.prototype.go = function(){
+        var opts = this.opts.dest;
+        if($(window).scrollTop() != dest){
+            this.$el.scrollTop(dest);
+        }
+    };
+    return {
+        ScrollTo: ScrollTo
+    }
+});
+```
+2. 依赖jQuery、scrollto模块，定义返回顶部组件
+```
+// backtop.js
+define(['jquery', 'scrollto'], function($, scrollto) {
+    'use strict';
+    function BackTop(el, opts){
+        this.opts = $.extend({}, BackTop.DEFAULTS, opts);
+        this.$el = $(el);
+        this.scroll = new scrollto.ScrollTo({
+            dest: 0,
+            speed: this.opts.speed
+        });
+        if(this.opts.mode === 'move'){
+            this.$el.on('click', $.proxy(this._move, this));
+        }else{
+            this.$el.on('click', $.proxy(this._go, this));
+        }
+        $(window).on('scroll', $.proxy(this._checkPosition, this));
+    }
+    BackTop.DEFAULTS = {
+        mode: 'move',
+        pos: $(window).height(),
+        speed: 800
+    };
+    BackTop.prototype._move = function(){
+        this.scroll.move();
+    };
+    BackTop.prototype._go = function(){
+        this.scroll.go();
+    };
+    BackTop.prototype._checkPosition = function(){
+        var $el = this.$el;
+        if($(window).scrollTop() > this.opts.pos){
+            $el.fadeIn();
+        }else{
+            $el.fadeOut();
+        }
+    };
+    // jquery插件写法
+    $.fn.extend({
+        backtop: function(opts){
+            return this.each(function(){
+                new BackTop(this, opts);
+            });
+        }
+    })
+    return {
+        BackTop: BackTop
+    };
+});
+```
+3. 调用
+```
+requirejs(['jquery', 'backtop'], function($, backtop){
+
+    // 构造函数调用方式
+    // new backtop.BackTop($('#backTop'), {
+    //     mode: 'move',
+    //     pos: 100,
+    //     speed: 2000
+    // });
+
+    // jquery插件的写法
+    $('#backTop').backtop({
+        mode: 'move'
+    });
+});
+```
+[预览](https://viivlgr.github.io/components/Toolbar/tool3.html)
+
+
 ## Sass的基础知识
 - 安装[koala](http://koala-app.com/index-zh.html)支持编译sass文件
     可以设置中文，和编译后的方式
 
 ### 使用
+- 嵌套:后代选择器
+```
+ul{
+    li{
+        a{
+
+        }
+    }
+}
+ul li a{}
+```
 - 变量： `$`符号开头；运算符两侧要有空格
 ```
 $toolbar-size: 52px;
@@ -51,12 +170,12 @@ $toolbar-size: 52px;
 }
 ```
 
-- _mixin.scss 文件导入: 不需要`_`和后缀名
+- `@import`引入外部文件 `_mixin.scss` 文件导入: 不需要`_`和后缀名
 ```
 @import "mixin";
 ```
 
-- 继承
+- 继承 
 ```
 @extend .icon-wechat;
 ```
