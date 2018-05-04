@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表情</title>
+    <style>
+    body,p,ul,li{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: #eee;
+    }
+    .box{
+        margin: 150px 0 0 200px;
+    }
+    #face-btn{
+        display: inline-block;
+        text-decoration: none;
+        color:#333;
+        border: 1px solid #ccc;
+        line-height: 30px;
+        padding: 5px 10px;
+    }
+    #face-btn img{
+        display: inline-block;
+        vertical-align: text-top;;
+    }
+    .panel{
+        width: 390px;
+        padding: 2px;
+        border: 1px solid #ccc;
+        background: #fff;
+        text-align: center;
+        display: none;
+    }
+    .panel .loading{
+        font-size: 12px;
+        color:#666;
+        line-height: 50px;
+    }
+    .list{
+        list-style: none;
+        text-align: left;
+    }
+    .list li{
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        border: 1px solid #fff;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <a href="javascript:;" id="face-btn">
+            <img src="face/14.gif" alt="" class="img"> 表情</a>
+        <div class="panel">
+            <p class="loading">表情加载中...</p>
+            <ul class="list">
+                <li><img src="face/1.gif" alt="" class="li"></li>
+                <li><img src="face/2.gif" alt="" class="li"></li>
+                <li><img src="face/3.gif" alt="" class="li"></li>
+                <li>
+                    <img src="face/4.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/5.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/6.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/7.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/8.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/9.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/10.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/11.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/12.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/13.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/14.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/15.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/16.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/17.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/18.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/19.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/20.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/21.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/22.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/23.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/24.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/25.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/26.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/27.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/28.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/29.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/30.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/31.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/32.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/33.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/34.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/35.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/36.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/37.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/38.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/39.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/40.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/41.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/42.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/43.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/44.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/45.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/46.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/47.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/48.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/49.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/50.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/51.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/52.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/53.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/54.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/55.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/56.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/57.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/58.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/59.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/60.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/61.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/62.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/63.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/64.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/65.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/66.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/67.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/68.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/69.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/70.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/71.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/72.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/73.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/74.gif" alt="" class="li">
+                </li>
+                <li>
+                    <img src="face/75.gif" alt="" class="li">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../Camaro/preload.js"></script>
+    <script>
+        var $btn = $('#face-btn'),
+            $panel = $('.panel');
+        var imgs = [];
+
+        for(var i = 0, len = 75; i < len; i++){
+            imgs[i] = 'face/' + (i + 1) + '.gif';
+        }
+        var length = imgs.length;
+        $btn.on('click', function(e){
+            e.stopPropagation();
+            $panel.show();
+            $.preload(imgs, {
+                all: function(){
+                    var html = '';
+                    html += '<ul class="list">';
+                    for(var i = 0; i < length; i++){
+                        html += '<li><img src="' + imgs[i] + '"></li>';
+                    }
+                    html += '</ul>';
+                    $panel.html(html);
+                }
+            });
+        });
+        $(document).on('click', function(){
+            $panel.hide();
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>漫画加载</title>
+    <style>
+        .box {
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            padding: 0 10px;
+            margin-right: 50px;
+            color: #333;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521199988165&di=88270c8bfed3c7e0765b6fd18965ca28&imgtype=0&src=http%3A%2F%2Fa3.topitme.com%2F9%2Ff9%2F1a%2F115225742437c1af99o.jpg"
+            alt="pic" id="img">
+        <p>
+            <a href="javascript:;" class="btn" data-control="prev">上一页</a>
+            <a href="javascript:;" class="btn" data-control="next">下一页</a>
+        </p>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../Camaro/preload.js"></script>
+    <script>
+    var imgs = [
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521199988165&di=88270c8bfed3c7e0765b6fd18965ca28&imgtype=0&src=http%3A%2F%2Fa3.topitme.com%2F9%2Ff9%2F1a%2F115225742437c1af99o.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521200484804&di=25a86a9ef07e794c66a208ae722ed03a&imgtype=0&src=http%3A%2F%2Ff5.topitme.com%2F5%2F55%2F37%2F11199104325ca37555o.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521200495443&di=d01ca6b0e73b724874ca03cc07beadea&imgtype=0&src=http%3A%2F%2Fpic38.nipic.com%2F20140306%2F13985308_104554616152_2.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521200504460&di=519e84da51cd9c4f05d7aae697c5018d&imgtype=0&src=http%3A%2F%2Fpic12.nipic.com%2F20110124%2F6165971_163927776947_2.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521200514899&di=6e5dff07a85a9eed7905ca78dd2487fa&imgtype=0&src=http%3A%2F%2Fpic31.nipic.com%2F20130705%2F13180252_123152294193_2.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521200530435&di=80e4b05cf50fb3f4a2f20d66a1895e33&imgtype=0&src=http%3A%2F%2Fimg.kutoo8.com%2Fupload%2Fthumb%2F380587%2F31f3f89cd5f45b771a506f2ffd068da6_960x540.jpg'
+        ];
+        var index = 0;
+        var length = imgs.length;
+        $.preload(imgs, {
+            order: 'ordered',
+            each: function(count){
+                console.log(count)
+            },
+            all: function(){
+                console.log('all');
+            }
+        })
+        $('.btn').on('click', function(){
+            if($(this).data('control') === 'prev'){
+                index = Math.max(0, --index);
+            }else{
+                index = Math.min(length-1, ++index);
+            }
+            document.title = (index + 1) + '/' + length;
+            $('#img').attr('src', imgs[index]);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+@import "mixin";
+@import "font";
+$toolbar-size: 52px;
+.toolbar{
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -$toolbar-size / 2;
+}
+.toolbar-item{
+    position: relative;
+    display: block;
+    width: $toolbar-size;
+    height: $toolbar-size;
+    margin-top: 1px;
+    &:hover{
+        .toolbar-btn{
+            &::before{
+                top: -$toolbar-size;
+            }
+            &::after{
+                top: 0;
+            }
+        }
+        &::after{
+            @include opacity(1);
+            @include scale(1);
+        }
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        right: $toolbar-size - 6;
+        bottom: -10px;
+        width: 172px;
+        background-image: url('../img/toolbar_img.png');
+        background-repeat: no-repeat;
+        @include opacity(0);
+        @include transform-origin(95% 95%);
+        @include scale(0.01);
+        @include transition(all 1s);
+    }
+}
+.tool-item-weixin{
+    &::after{
+        content: '';
+        height: 212px;
+        background-position: 0 0;
+    }
+    .toolbar-btn{
+        @extend .icon-wechat;
+        &::after{
+            content: '公众\A账号'
+        }
+    }
+}
+.tool-item-feedback{
+    .toolbar-btn{
+        @extend .icon-bubble2;
+        &::after{
+            content: '意见\A反馈'
+        }
+    }
+}
+.tool-item-app{
+    &::after{
+        content: '';
+        height: 194px;
+        background-position: 0 -222px;
+    }
+    .toolbar-btn{
+        @extend .icon-mobile;
+        &::after{
+            content: 'APP\A下载'
+        }
+    }
+}
+.tool-item-top{
+    .toolbar-btn{
+        @extend .icon-arrow-up2;
+        &::after{
+            content: '返回\A顶部'
+        }
+    }
+}
+.toolbar-btn{
+    &, &::before, &::after{
+        width: $toolbar-size;
+        height: $toolbar-size;
+        position: absolute;
+        left: 0;
+    }
+    &::before, &::after{
+        content: '';
+        color: #fff;
+        text-align: center;
+        @include transition(top 1s);
+    }
+    top: 0;
+    
+    overflow: hidden;
+
+    @extend [class^="icon-"];
+
+    &:before{ // icon
+        top: 0;
+        background-color: #d0d6d9;
+        font-size: 30px;
+        line-height: $toolbar-size;
+    }
+    &:after{ // text
+        top: $toolbar-size;
+        background-color: #98a1a6;
+        font-size: 12px;
+        padding-top: 12px;
+        line-height: 1.2;
+        white-space: pre-wrap;
+    }
+}

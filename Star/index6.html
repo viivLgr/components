@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>星级平分</title>
+    <style>
+        .rating{
+            position: relative;
+            width: 166px;
+            height: 33px;
+            background: url('./start.png') repeat-x;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        .rating:hover .rating-item{
+            background: none;
+        }
+        .rating-item:hover{
+            background: url('./start.png') repeat-x 0 -40px !important;
+        }
+        .rating-item{
+            position: absolute;
+            top: 0;
+            z-index: 3;
+            width: 33px;
+            height: 33px;
+        }
+        .rating input{
+            position: absolute;
+            left: 0;
+            top: -20px;
+        }
+        .rating-item-1{
+            left: 0;
+        }
+        .rating-item-2{
+            left: 33px;
+        }
+        .rating-item-3{
+            left: 66px;
+        }
+        .rating-item-4{
+            left: 99px;
+        }
+        .rating-item-5{
+            left: 133px;
+        }
+        .rating-item:hover{
+            left: 0;
+            z-index: 2;
+            background: url('./start.png') repeat-x 0 -40px;
+        }
+        input:checked + .rating-item{
+            left: 0;
+            z-index: 1;
+            background: url('./start.png') repeat-x 0 -40px
+        }
+        input:checked + .rating-item ~ .rating-item{
+            z-index: 0;
+        }
+        .rating-item-1:hover, #rating-item-1:checked + .rating-item{
+            width: 33px;
+        }
+        .rating-item-2:hover, #rating-item-2:checked + .rating-item{
+            width: 66px;
+        }
+        .rating-item-3:hover, #rating-item-3:checked + .rating-item{
+            width: 99px;
+        }
+        .rating-item-4:hover, #rating-item-4:checked + .rating-item{
+            width: 133px;
+        }
+        .rating-item-5:hover, #rating-item-5:checked + .rating-item{
+            width: 166px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="rating">
+            <input type="radio" name="rating" id="rating-item-1" value="1"><label for="rating-item-1" title="很不好" class="rating-item rating-item-1"></label>
+            <input type="radio" name="rating" id="rating-item-2" value="2" checked><label for="rating-item-2" title="不好" class="rating-item rating-item-2"></label>
+            <input type="radio" name="rating" id="rating-item-3" value="3"><label for="rating-item-3" title="一般" class="rating-item rating-item-3"></label>
+            <input type="radio" name="rating" id="rating-item-4" value="4"><label for="rating-item-4" title="好" class="rating-item rating-item-4"></label>
+            <input type="radio" name="rating" id="rating-item-5" value="5"><label for="rating-item-5" title="很好" class="rating-item rating-item-5"></label>
+            <!-- <a href="javascript:;" title="很不好" class="rating-item rating-item-1"></a>
+            <a href="javascript:;" title="不好" class="rating-item rating-item-2"></a>
+            <a href="javascript:;" title="一般" class="rating-item rating-item-3"></a>
+            <a href="javascript:;" title="好" class="rating-item rating-item-4"></a>
+            <a href="javascript:;" title="很好" class="rating-item rating-item-5"></a> -->
+        </div>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
